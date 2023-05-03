@@ -5,6 +5,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 
 public class RomanNumeralConversionTest {
+    RomanNumeralConversion conversion = new RomanNumeralConversion();
 
     @ParameterizedTest
     @CsvSource({
@@ -18,7 +19,7 @@ public class RomanNumeralConversionTest {
             "17, XVII"
     })
     void returnsRomanNumeralsWhenGiveArabicNumbers(int in_arabic, String expected) {
-        assertThat(RomanNumeralConversion.convert(in_arabic)).isEqualTo(expected);
+        assertThat(conversion.convert(in_arabic)).isEqualTo(expected);
     }
 
 }

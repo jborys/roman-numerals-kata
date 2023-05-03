@@ -1,13 +1,21 @@
+import java.util.Arrays;
+import java.util.List;
+
 public class RomanNumeralConversion {
-    public static String convert(int in_arabic) {
+
+    record Conversion(int arabicDigit,
+                      String romanDigit){};
+    List<Conversion> conversions = Arrays.asList(
+            new Conversion(10,"X"),
+            new Conversion(5,"V")
+    );
+    public String convert(int in_arabic) {
         String roman = "";
-        if (in_arabic >= 10) {
-            roman += "X";
-            in_arabic -= 10;
-        }
-        if (in_arabic >= 5) {
-            roman += "V";
-            in_arabic -= 5;
+        for (Conversion conversion : conversions) {
+            if (in_arabic >= conversion.arabicDigit) {
+                roman += conversion.romanDigit;
+                in_arabic -= conversion.arabicDigit;
+            }
         }
         roman += "I".repeat(in_arabic);
         return roman;

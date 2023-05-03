@@ -10,7 +10,12 @@ public class RomanNumeralConversionTest {
     @CsvSource({
             "1, I",
             "2, II",
-            "3, III"
+            "3, III",
+            "5, V",
+            "7, VII",
+            "10, X",
+            "12, XII",
+            "17, XVII"
     })
     void returnsRomanNumeralsWhenGiveArabicNumbers(int in_arabic, String expected) {
         assertThat(RomanNumeralConversion.convert(in_arabic)).isEqualTo(expected);

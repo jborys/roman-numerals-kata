@@ -16,7 +16,8 @@ public class RomanNumeralConversionTest {
             "7, VII",
             "10, X",
             "12, XII",
-            "17, XVII"
+            "17, XVII",
+            "27, XXVII"
     })
     void returnsRomanNumeralsWhenGiveArabicNumbers(int in_arabic, String expected) {
         assertThat(conversion.convert(in_arabic)).isEqualTo(expected);

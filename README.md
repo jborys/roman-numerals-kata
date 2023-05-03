@@ -21,6 +21,25 @@ By now you should be proficient with the basic skills of TDD - the 3 Laws of TDD
 the Rule of Three for duplication, and you should be experienced in how to structure a 
 unit test (Arrange, Act, Assert).
 
+### The Transformation Priority Premise
+#### The Trasnformations
+The Transformations
+
+    ({}–>nil) no code at all->code that employs nil
+    (nil->constant)
+    (constant->constant+) a simple constant to a more complex constant
+    (constant->scalar) replacing a constant with a variable or an argument
+    (statement->statements) adding more unconditional statements.
+    (unconditional->if) splitting the execution path
+    (scalar->array)
+    (array->container)
+    (statement->recursion)
+    (if->while)
+    (expression->function) replacing an expression with a function or algorithm
+    (variable->assignment) replacing the value of a variable.
+
+
+
 #### <u>[Three Laws of TDD](http://butunclebob.com/ArticleS.UncleBob.TheThreeRulesOfTdd)</u>
 
 1. You are not allowed to write any production code unless it is to make a failing unit test pass.

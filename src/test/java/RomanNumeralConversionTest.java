@@ -9,7 +9,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class RomanNumeralConversionTest {
     @Test
-    void returnsDesiredResult() {
-        //TODO write your first failing test
+    void returnsRomanNumeral_I_WhenGiven_1() {
+        assertThat(RomanNumeralConversion.convert(1))
+                .isEqualTo("I");
     }
 }

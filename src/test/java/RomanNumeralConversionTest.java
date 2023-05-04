@@ -9,15 +9,20 @@ public class RomanNumeralConversionTest {
 
     @ParameterizedTest
     @CsvSource({
-            "1, I",
-            "2, II",
-            "3, III",
-            "5, V",
-            "7, VII",
-            "10, X",
-            "12, XII",
-            "17, XVII",
-            "27, XXVII"
+            "1, I", "2, II", "3, III", "4, IV",
+            "5, V", "7, VII", "9, IX", "10, X",
+            "12, XII", "17, XVII", "27, XXVII",
+            "30, XXX",
+            "40, XL",
+            "50, L",
+            "90, XC",
+            "100, C",
+            "400, CD",
+            "500, D",
+            "900, CM",
+            "1000, M",
+            "3497, MMMCDXCVII",
+            "2944, MMCMXLIV"
     })
     void returnsRomanNumeralsWhenGiveArabicNumbers(int in_arabic, String expected) {
         assertThat(conversion.convert(in_arabic)).isEqualTo(expected);

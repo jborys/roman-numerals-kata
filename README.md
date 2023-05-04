@@ -1,19 +1,49 @@
 # Roman Numerals Kata
+### Overview
+Roman numerals is a numbering system which uses Latin alpha characters to represent a known set of numbers and combinations of these to represent all others. 
+
+### Objectives
+Write a function which can take any integer from 1-1000 and return its Roman numeral representation as a string.
+- Combine Roman numerals to make bigger numbers, e.g. I = 1, II = 2 (1 + 1), VI = 6 (5 + 1). 
+Larger numerals come before (left of) smaller ones.
+- You cannot combine more than three of the same numeral, e.g. IIII = 4 is not valid. Instead, you must use the next numeral up and prefix it with a numeral to subtract from it, e.g. IV = 4 (1 less than 5), XL = 40 (10 less than 50). 
+You can spot these exceptional cases because the smaller numeral comes before (left of) the larger.
+
+### Single character numerals
+| Arabic number	 | Roman numeral | 
+|----------------|---------------|
+| 1	             | I             |
+| 5	             | V             |
+| 10	         | X             |
+| 50             | L             |
+| 100	         | C             |
+| 500	         | D             |
+| 1000	         | M             |
+
+
 Convert Arabic numbers (the one we use daily: 1, 2, 3, 4, 5, …) into their Roman equivalent: I, II, III, IV, V, …
-The Romans were active in trade and commerce, and from the time of learning to write they needed a way to indicate numbers. The system they developed lasted many centuries, and still sees some specialized use today.
-
-Roman numerals traditionally indicate the order of rulers or ships who share the same name (i.e. Queen Elizabeth II). They are also sometimes still used in the publishing industry for copyright dates, and on cornerstones and gravestones when the owner of a building or the family of the deceased wishes to create an impression of classical dignity. The Roman numbering system also lives on in our languages, which still use Latin word roots to express numerical ideas. A few examples: unilateral, duo, quadricep, septuagenarian, decade, milliliter.
-
 The big differences between Roman and Arabic numerals (the ones we use today) are that Romans didn't have a symbol for zero, and that numeral placement within a number can sometimes indicate subtraction rather than addition.
 
-Here are the basics:
-- I 	The easiest way to note down a number is to make that many marks - little I's. Thus I means 1, II means 2, III means 3. However, four strokes seemed like too many....
-- V 	So the Romans moved on to the symbol for 5 - V. Placing I in front of the V — or placing any smaller number in front of any larger number — indicates subtraction. So IV means 4. After V comes a series of additions - VI means 6, VII means 7, VIII means 8.
-- X 	X means 10. But wait — what about 9? Same deal. IX means to subtract I from X, leaving 9. Numbers in the teens, twenties and thirties follow the same form as the first set, only with X's indicating the number of tens. So XXXI is 31, and XXIV is 24.
-- L 	L means 50. Based on what you've learned, I bet you can figure out what 40 is. If you guessed XL, you're right = 10 subtracted from 50. And thus 60, 70, and 80 are LX, LXX and LXXX.
-- C 	C stands for centum, the Latin word for 100. A centurion led 100 men. We still use this in words like "century" and "cent." The subtraction rule means 90 is written as XC. Like the X's and L's, the C's are tacked on to the beginning of numbers to indicate how many hundreds there are: CCCLXIX is 369.
-- D 	D stands for 500. As you can probably guess by this time, CD means 400. So CDXLVIII is 448. (See why we switched systems?)
-- M 	M is 1,000. You see a lot of Ms because Roman numerals are used a lot to indicate dates. For instance, this page was written in the year of Nova Roma's founding, 1998 CE (Common Era; Christians use AD for Anno Domini, "year of our Lord"). That year is written as MCMXCVIII. But wait! Nova Roma counts years from the founding of Rome, ab urbe condita. By that reckoning Nova Roma was founded in 2751 a.u.c. or MMDCCLI.
+### Basic Conversions
+| Arabic number | Roman numeral | Arabic number | Roman numeral | Arabic number | Roman numeral |
+|---------------|---------------|---------------|---------------|---------------|---------------|
+| 2             | II            | 20            | XX            | 200           | CC            |
+| 3             | III           | 30            | XXX           | 300           | CCC           |
+| 4             | IV            | 40            | XL            | 400           | CD            |
+| 6             | VI            | 60            | LX            | 600           | DC            |
+| 7             | VII           | 70            | LXX           | 700           | DCC           |
+| 8             | VIII          | 80            | LXXX          | 800           | DCCC          |
+| 9             | IX            | 90            | XC            | 900           | CM            |
+
+### Advanced Conversions
+| Arabic number | Roman numeral | Hundreds | Tens | Ones |
+|---------------|---------------|----------|------|------|
+| 42            | XLII          | XL       | XL   | II   |
+| 584           | DLXXXIV       | D        | LXXX | IV   |
+| 777           | DCCLXXVII     | DC       | LXX  | VII  |
+| 999           | CMXCIX        | CM       | XC   | IX   |
+
+[Verify your own conversions here.](https://www.romannumerals.org/converter)
 
 ### Notes:
 For the purposes of practicing TDD, this is one of the more advanced katas you can do. 
@@ -37,8 +67,6 @@ The Transformations
     (if->while)
     (expression->function) replacing an expression with a function or algorithm
     (variable->assignment) replacing the value of a variable.
-
-
 
 #### <u>[Three Laws of TDD](http://butunclebob.com/ArticleS.UncleBob.TheThreeRulesOfTdd)</u>
 

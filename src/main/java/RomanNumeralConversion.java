@@ -17,7 +17,8 @@ public class RomanNumeralConversion {
             new Conversion(10,"X"),
             new Conversion(9,"IX"),
             new Conversion(5,"V"),
-            new Conversion(4,"IV")
+            new Conversion(4,"IV"),
+            new Conversion(1,"I")
     );
     public String convert(int in_arabic) {
         StringBuilder roman = new StringBuilder();
@@ -27,7 +28,6 @@ public class RomanNumeralConversion {
                 in_arabic -= conversion.arabicDigit;
             }
         }
-        roman.append("I".repeat(in_arabic));
         return roman.toString();
     }
 }
